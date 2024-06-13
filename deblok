@@ -1,0 +1,12 @@
+#!/bin/bash
+curl_func () {
+    curl -s "http://localhost:80/page{1, 2}.php?[1-1000]" &
+}
+
+for i in {1..4}
+do
+    curl_func
+done
+
+wait 
+echo "All done"
